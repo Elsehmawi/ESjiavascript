@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione iscrizioni</title>
+</head>
+<body>
+    <form id = "myForm">
+        <table id="risultati" border ="1">
+       
+            <tr>
+                <td>codice</td>
+                <td><input type="text" id="codice" name="bo"></td>
+                
+
+            </tr>
+            <tr>
+                <td>ore</td>
+                <td><input type="text" id="ore" name="codice" placeholder="inserisci le ore dello studente" ></td>
+            
+            </tr>
+    
+        <tr>
+            <td><button type="button"  onclick="button " id="calcola">aggiungi()</button></td>
+            <td><button type="button" onclick="button" id="calcola">mostraiscrizioni()</button></td>
+        </tr>
+    </table>
+        
+        
+       
+    </form>
+ 
+<script>
+    let tabella=""
+    let Codice = document.getElementById("codice")
+    
+    let ora = document.getElementById("ore")
+    let lista=[]
+    lista.push({codice:"codice", ore: "ore",importo:15});
+    function aggiungi(){
+        if(codice===""){
+            return false
+        }else{
+            return true 
+        }
+        for(let i of lista){
+            let riga = `<tr>
+                <td>${i.codice}</td>
+                <td>${i.ore}</td>
+                <td>${i.importo}</td>`
+
+        }
+        
+
+ 
+    function calcolaimporto(){
+        let sconto=0
+        let costoperora=15
+        let quota=0
+        if(0<ora<10){
+            sconto=0
+            quota=ore*costoperora
+        }else if(11<ora<20){
+            sconto=costoperora*0.05
+            quota=ore*costoperora*sconto
+        }else if(ora>20){
+            sconto=costoperora*0.10
+            quota=ore*costoperora*sconto*sconto
+        }
+        return quota
+        
+
+    }
+    return lista
+}
+    function mostraiscrizioni(){
+        var tabella=""
+
+    }
+
+    tabella=document.getElementById("tabella").innerHTML=tabella
+    
+
+     
+
+       
+
+ 
+
+</script>  
+</body>
+</html>
